@@ -78,7 +78,7 @@ func MustExtractDoc(content, name string) string {
 // for multiple analyzers, each in its own section.
 // The HTML anchors generated for each heading are predictable.
 //
-// It returns an error if the content was not a valid Go source file
+// It returns an error if the content was not a valid Go+ source file
 // containing a package doc comment with a heading of the required
 // form.
 //
@@ -88,12 +88,12 @@ func MustExtractDoc(content, name string) string {
 // the same source and formatted appropriately.
 func ExtractDoc(content, name string) (string, error) {
 	if content == "" {
-		return "", fmt.Errorf("empty Go source file")
+		return "", fmt.Errorf("empty Go+ source file")
 	}
 	fset := token.NewFileSet()
 	f, err := parser.ParseFile(fset, "", content, parser.ParseComments|parser.PackageClauseOnly)
 	if err != nil {
-		return "", fmt.Errorf("not a Go source file")
+		return "", fmt.Errorf("not a Go+ source file")
 	}
 	if f.Doc == nil {
 		return "", fmt.Errorf("Go+ source file has no package doc comment")

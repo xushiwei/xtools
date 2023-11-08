@@ -52,9 +52,9 @@ var x = syntax error
 		want          string // doc or "error: %w" string
 	}{
 		{"", "foo",
-			"error: empty Go source file"},
-		{"//foo", "foo",
-			"error: not a Go source file"},
+			"error: empty Go+ source file"},
+		{"\"", "foo",
+			"error: not a Go+ source file"},
 		{"//foo\npackage foo", "foo",
 			"error: package doc comment contains no 'Analyzer foo' heading"},
 		{multi, "foo",
