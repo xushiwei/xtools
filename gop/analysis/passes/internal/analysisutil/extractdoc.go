@@ -6,9 +6,10 @@ package analysisutil
 
 import (
 	"fmt"
-	"go/parser"
-	"go/token"
 	"strings"
+
+	"github.com/goplus/gop/parser"
+	"github.com/goplus/gop/token"
 )
 
 // MustExtractDoc is like [ExtractDoc] but it panics on error.
@@ -95,7 +96,7 @@ func ExtractDoc(content, name string) (string, error) {
 		return "", fmt.Errorf("not a Go source file")
 	}
 	if f.Doc == nil {
-		return "", fmt.Errorf("Go source file has no package doc comment")
+		return "", fmt.Errorf("Go+ source file has no package doc comment")
 	}
 	for _, section := range strings.Split(f.Doc.Text(), "\n# ") {
 		if body := strings.TrimPrefix(section, "Analyzer "+name); body != section &&

@@ -8,9 +8,9 @@ package appends
 
 import (
 	_ "embed"
-	"go/ast"
 	"go/types"
 
+	"github.com/goplus/gop/ast"
 	"github.com/goplus/xtools/gop/analysis"
 	"github.com/goplus/xtools/gop/analysis/passes/inspect"
 	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"

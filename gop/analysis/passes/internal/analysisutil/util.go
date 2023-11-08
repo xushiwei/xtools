@@ -8,11 +8,13 @@ package analysisutil
 
 import (
 	"bytes"
-	"go/ast"
-	"go/printer"
-	"go/token"
 	"go/types"
-	"io/ioutil"
+	"os"
+
+	"github.com/goplus/gop/ast"
+	"github.com/goplus/gop/printer"
+	"github.com/goplus/gop/token"
+	"github.com/goplus/gop/x/typesutil"
 )
 
 // Format returns a string representation of the expression.
@@ -23,7 +25,7 @@ func Format(fset *token.FileSet, x ast.Expr) string {
 }
 
 // HasSideEffects reports whether evaluation of e has side effects.
-func HasSideEffects(info *types.Info, e ast.Expr) bool {
+func HasSideEffects(info *typesutil.Info, e ast.Expr) bool {
 	safe := true
 	ast.Inspect(e, func(node ast.Node) bool {
 		switch n := node.(type) {
@@ -69,7 +71,7 @@ func Unparen(e ast.Expr) ast.Expr {
 // ReadFile reads a file and adds it to the FileSet
 // so that we can report errors against it using lineStart.
 func ReadFile(fset *token.FileSet, filename string) ([]byte, *token.File, error) {
-	content, err := ioutil.ReadFile(filename)
+	content, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, nil, err
 	}
