@@ -14,7 +14,6 @@ import (
 	"fmt"
 	"go/token"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"strconv"
@@ -251,19 +250,10 @@ const (
 	setFalse
 )
 
-func triStateFlag(name string, value triState, usage string) *triState {
-	flag.Var(&value, name, usage)
-	return &value
-}
-
 // triState implements flag.Value, flag.Getter, and flag.boolFlag.
 // They work like boolean flags: we can say vet -printf as well as vet -printf=true
 func (ts *triState) Get() interface{} {
 	return *ts == setTrue
-}
-
-func (ts triState) isTrue() bool {
-	return ts == setTrue
 }
 
 func (ts *triState) Set(value string) error {
@@ -331,7 +321,7 @@ func PrintPlain(fset *token.FileSet, diag analysis.Diagnostic) {
 		if !end.IsValid() {
 			end = posn
 		}
-		data, _ := ioutil.ReadFile(posn.Filename)
+		data, _ := os.ReadFile(posn.Filename)
 		lines := strings.Split(string(data), "\n")
 		for i := posn.Line - Context; i <= end.Line+Context; i++ {
 			if 1 <= i && i <= len(lines) {
