@@ -7,8 +7,8 @@ package timeformat_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/timeformat"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/timeformat"
 )
 
 func Test(t *testing.T) {

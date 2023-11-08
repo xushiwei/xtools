@@ -29,9 +29,9 @@ import (
 	"sync"
 	"time"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/internal/analysisflags"
-	"golang.org/x/tools/go/packages"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/internal/analysisflags"
+	"github.com/goplus/xtools/gop/packages"
 	"golang.org/x/tools/internal/diff"
 	"golang.org/x/tools/internal/robustio"
 )

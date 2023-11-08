@@ -32,13 +32,13 @@ import (
 	"sort"
 	"strings"
 
-	"golang.org/x/tools/go/analysis"
+	"github.com/goplus/xtools/gop/analysis"
 )
 
 var Analyzer = &analysis.Analyzer{
 	Name:       "pkgfact",
 	Doc:        "gather name/value pairs from constant declarations",
-	URL:        "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/pkgfact",
+	URL:        "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/pkgfact",
 	Run:        run,
 	FactTypes:  []analysis.Fact{new(pairsFact)},
 	ResultType: reflect.TypeOf(map[string]string{}),

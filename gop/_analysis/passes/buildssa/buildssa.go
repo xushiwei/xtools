@@ -13,14 +13,14 @@ import (
 	"go/types"
 	"reflect"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/ssa"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/ssa"
 )
 
 var Analyzer = &analysis.Analyzer{
 	Name:       "buildssa",
 	Doc:        "build SSA-form IR for later passes",
-	URL:        "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/buildssa",
+	URL:        "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/buildssa",
 	Run:        run,
 	ResultType: reflect.TypeOf(new(SSA)),
 }

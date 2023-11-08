@@ -14,9 +14,9 @@ import (
 	"runtime"
 	"testing"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/internal/checker"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/internal/checker"
 	"golang.org/x/tools/internal/testenv"
 )
 

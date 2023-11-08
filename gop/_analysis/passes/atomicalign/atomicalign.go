@@ -14,10 +14,10 @@ import (
 	"go/token"
 	"go/types"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/analysis/passes/internal/analysisutil"
-	"golang.org/x/tools/go/ast/inspector"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"
+	"github.com/goplus/xtools/gop/ast/inspector"
 )
 
 const Doc = "check for non-64-bits-aligned arguments to sync/atomic functions"
@@ -25,7 +25,7 @@ const Doc = "check for non-64-bits-aligned arguments to sync/atomic functions"
 var Analyzer = &analysis.Analyzer{
 	Name:     "atomicalign",
 	Doc:      Doc,
-	URL:      "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/atomicalign",
+	URL:      "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/atomicalign",
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 	Run:      run,
 }

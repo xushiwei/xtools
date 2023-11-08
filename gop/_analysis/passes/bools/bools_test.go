@@ -7,8 +7,8 @@ package bools_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/bools"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/bools"
 	"golang.org/x/tools/internal/typeparams"
 )
 

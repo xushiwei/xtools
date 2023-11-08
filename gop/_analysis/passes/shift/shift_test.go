@@ -7,8 +7,8 @@ package shift_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/shift"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/shift"
 	"golang.org/x/tools/internal/typeparams"
 )
 

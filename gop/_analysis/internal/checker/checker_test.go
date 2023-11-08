@@ -12,11 +12,11 @@ import (
 	"reflect"
 	"testing"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/internal/checker"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/ast/inspector"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/internal/checker"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/ast/inspector"
 	"golang.org/x/tools/internal/testenv"
 )
 
@@ -224,7 +224,7 @@ func TestURL(t *testing.T) {
 	pkgname := &analysis.Analyzer{
 		Name: "pkgname",
 		Doc:  "trivial analyzer that reports package names",
-		URL:  "https://pkg.go.dev/golang.org/x/tools/go/analysis/internal/checker",
+		URL:  "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/internal/checker",
 		Run: func(p *analysis.Pass) (interface{}, error) {
 			for _, f := range p.Files {
 				p.ReportRangef(f.Name, "package name is %s", f.Name.Name)
@@ -247,7 +247,7 @@ func TestURL(t *testing.T) {
 			urls = append(urls, d.URL)
 		}
 	}
-	want := []string{"https://pkg.go.dev/golang.org/x/tools/go/analysis/internal/checker"}
+	want := []string{"https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/internal/checker"}
 	if !reflect.DeepEqual(urls, want) {
 		t.Errorf("Expected Diagnostics.URLs %v. got %v", want, urls)
 	}

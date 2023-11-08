@@ -7,7 +7,7 @@ package slog
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
 	"golang.org/x/tools/internal/testenv"
 )
 

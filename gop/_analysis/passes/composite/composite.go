@@ -12,9 +12,9 @@ import (
 	"go/types"
 	"strings"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/ast/inspector"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/ast/inspector"
 	"golang.org/x/tools/internal/typeparams"
 )
 
@@ -37,7 +37,7 @@ should be replaced by:
 var Analyzer = &analysis.Analyzer{
 	Name:             "composites",
 	Doc:              Doc,
-	URL:              "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/composite",
+	URL:              "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/composite",
 	Requires:         []*analysis.Analyzer{inspect.Analyzer},
 	RunDespiteErrors: true,
 	Run:              run,

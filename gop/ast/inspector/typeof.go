@@ -10,10 +10,9 @@ package inspector
 // see https://go-review.googlesource.com/c/tools/+/135655/1/go/ast/inspector/inspector.go#196
 
 import (
-	"go/ast"
 	"math"
 
-	"golang.org/x/tools/internal/typeparams"
+	"github.com/goplus/gop/ast"
 )
 
 const (
@@ -171,7 +170,7 @@ func typeOf(n ast.Node) uint64 {
 		return 1 << nIncDecStmt
 	case *ast.IndexExpr:
 		return 1 << nIndexExpr
-	case *typeparams.IndexListExpr:
+	case *ast.IndexListExpr:
 		return 1 << nIndexListExpr
 	case *ast.InterfaceType:
 		return 1 << nInterfaceType

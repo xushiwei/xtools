@@ -11,7 +11,7 @@ import (
 	"go/types"
 	"testing"
 
-	"golang.org/x/tools/go/analysis/passes/internal/analysisutil"
+	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"
 	"golang.org/x/tools/internal/typeparams"
 )
 

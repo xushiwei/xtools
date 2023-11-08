@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/url"
 
-	"golang.org/x/tools/go/analysis"
+	"github.com/goplus/xtools/gop/analysis"
 )
 
 // ResolveURL resolves the URL field for a Diagnostic from an Analyzer

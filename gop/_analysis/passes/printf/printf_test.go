@@ -7,8 +7,8 @@ package printf_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/printf"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/printf"
 	"golang.org/x/tools/internal/typeparams"
 )
 

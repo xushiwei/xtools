@@ -7,8 +7,8 @@ package sortslice_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/sortslice"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/sortslice"
 )
 
 func Test(t *testing.T) {

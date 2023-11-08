@@ -11,10 +11,10 @@ import (
 	"go/ast"
 	"go/types"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/analysis/passes/internal/analysisutil"
-	"golang.org/x/tools/go/ast/inspector"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"
+	"github.com/goplus/xtools/gop/ast/inspector"
 )
 
 //go:embed doc.go
@@ -23,7 +23,7 @@ var doc string
 var Analyzer = &analysis.Analyzer{
 	Name:     "appends",
 	Doc:      analysisutil.MustExtractDoc(doc, "appends"),
-	URL:      "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/appends",
+	URL:      "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/appends",
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 	Run:      run,
 }

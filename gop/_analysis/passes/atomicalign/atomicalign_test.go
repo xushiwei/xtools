@@ -7,8 +7,8 @@ package atomicalign_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/atomicalign"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/atomicalign"
 )
 
 func Test(t *testing.T) {

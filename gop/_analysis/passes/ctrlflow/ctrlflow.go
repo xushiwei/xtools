@@ -14,17 +14,17 @@ import (
 	"log"
 	"reflect"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/ast/inspector"
-	"golang.org/x/tools/go/cfg"
-	"golang.org/x/tools/go/types/typeutil"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/ast/inspector"
+	"github.com/goplus/xtools/gop/cfg"
+	"github.com/goplus/xtools/gop/types/typeutil"
 )
 
 var Analyzer = &analysis.Analyzer{
 	Name:       "ctrlflow",
 	Doc:        "build a control-flow graph",
-	URL:        "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/ctrlflow",
+	URL:        "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/ctrlflow",
 	Run:        run,
 	ResultType: reflect.TypeOf(new(CFGs)),
 	FactTypes:  []analysis.Fact{new(noReturn)},

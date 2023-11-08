@@ -15,9 +15,9 @@ import (
 	"go/types"
 	"sort"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/ast/inspector"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/ast/inspector"
 )
 
 const Doc = `find structs that would use less memory if their fields were sorted
@@ -51,7 +51,7 @@ known as "false sharing" that slows down both goroutines.
 var Analyzer = &analysis.Analyzer{
 	Name:     "fieldalignment",
 	Doc:      Doc,
-	URL:      "https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/fieldalignment",
+	URL:      "https://pkg.go.dev/github.com/goplus/xtools/gop/analysis/passes/fieldalignment",
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 	Run:      run,
 }

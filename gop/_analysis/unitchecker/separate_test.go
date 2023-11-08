@@ -21,10 +21,10 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"golang.org/x/tools/go/analysis/passes/printf"
-	"golang.org/x/tools/go/analysis/unitchecker"
-	"golang.org/x/tools/go/gcexportdata"
-	"golang.org/x/tools/go/packages"
+	"github.com/goplus/xtools/gop/analysis/passes/printf"
+	"github.com/goplus/xtools/gop/analysis/unitchecker"
+	"github.com/goplus/xtools/gop/gcexportdata"
+	"github.com/goplus/xtools/gop/packages"
 	"golang.org/x/tools/internal/testenv"
 	"golang.org/x/tools/txtar"
 )

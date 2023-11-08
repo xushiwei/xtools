@@ -9,7 +9,7 @@ import (
 	"go/ast"
 	"go/types"
 
-	"golang.org/x/tools/go/analysis"
+	"github.com/goplus/xtools/gop/analysis"
 	"golang.org/x/tools/internal/typeparams"
 )
 

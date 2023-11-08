@@ -7,8 +7,8 @@ package nilness_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/nilness"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/nilness"
 	"golang.org/x/tools/internal/typeparams"
 )
 

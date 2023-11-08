@@ -9,11 +9,11 @@ import (
 	"go/ast"
 	"go/types"
 
-	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/analysis/passes/internal/analysisutil"
-	"golang.org/x/tools/go/ast/inspector"
-	"golang.org/x/tools/go/types/typeutil"
+	"github.com/goplus/xtools/gop/analysis"
+	"github.com/goplus/xtools/gop/analysis/passes/inspect"
+	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"
+	"github.com/goplus/xtools/gop/ast/inspector"
+	"github.com/goplus/xtools/gop/types/typeutil"
 )
 
 //go:embed doc.go

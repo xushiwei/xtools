@@ -7,8 +7,8 @@ package unusedresult_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/unusedresult"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/unusedresult"
 	"golang.org/x/tools/internal/typeparams"
 )
 

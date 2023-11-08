@@ -7,8 +7,8 @@ package stringintconv_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/stringintconv"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/stringintconv"
 	"golang.org/x/tools/internal/typeparams"
 )
 

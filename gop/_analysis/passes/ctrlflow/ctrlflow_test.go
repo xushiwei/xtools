@@ -8,8 +8,8 @@ import (
 	"go/ast"
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/ctrlflow"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/ctrlflow"
 	"golang.org/x/tools/internal/typeparams"
 )
 

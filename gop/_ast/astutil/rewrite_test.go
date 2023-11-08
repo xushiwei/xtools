@@ -12,7 +12,7 @@ import (
 	"go/token"
 	"testing"
 
-	"golang.org/x/tools/go/ast/astutil"
+	"github.com/goplus/xtools/gop/ast/astutil"
 	"golang.org/x/tools/internal/typeparams"
 )
 

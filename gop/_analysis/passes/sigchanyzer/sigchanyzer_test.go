@@ -7,8 +7,8 @@ package sigchanyzer_test
 import (
 	"testing"
 
-	"golang.org/x/tools/go/analysis/analysistest"
-	"golang.org/x/tools/go/analysis/passes/sigchanyzer"
+	"github.com/goplus/xtools/gop/analysis/analysistest"
+	"github.com/goplus/xtools/gop/analysis/passes/sigchanyzer"
 )
 
 func Test(t *testing.T) {
