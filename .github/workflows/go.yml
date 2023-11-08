@@ -19,10 +19,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
+    - name: Set up Go/Go+
+      uses: goplus/setup-goplus@v1.1.0
       with:
         go-version: ${{ matrix.go-version }}
+        gop-version: "main"
+        check-latest: true
+        cache: true
 
     - name: Build
       run: go build -v ./...
