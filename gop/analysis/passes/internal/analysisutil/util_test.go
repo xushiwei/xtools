@@ -5,41 +5,36 @@
 package analysisutil_test
 
 import (
-	"go/ast"
-	"go/parser"
-	"go/token"
 	"go/types"
 	"testing"
 
+	"github.com/goplus/gop/ast"
+	"github.com/goplus/gop/parser"
+	"github.com/goplus/gop/token"
+	"github.com/goplus/gop/x/typesutil"
 	"github.com/goplus/xtools/gop/analysis/passes/internal/analysisutil"
-	"golang.org/x/tools/internal/typeparams"
 )
 
 func TestHasSideEffects(t *testing.T) {
-	if !typeparams.Enabled {
-		t.Skip("type parameters are not enabled")
-	}
 	src := `package p
 
 type T int
 
-type G[P any] int
-
 func _() {
 	var x int
 	_ = T(x)
-	_ = G[int](x)
 }
 `
 	fset := token.NewFileSet()
-	file, err := parser.ParseFile(fset, "p.go", src, 0)
+	file, err := parser.ParseFile(fset, "p.gop", src, 0)
 	if err != nil {
 		t.Fatal(err)
 	}
-	var conf types.Config
-	info := &types.Info{
+	var conf typesutil.CheckConfig
+	info := &typesutil.Info{
 		Types: make(map[ast.Expr]types.TypeAndValue),
 	}
+	typesutil.SetDebug(typesutil.DbgFlagAll)
 	_, err = conf.Check("", fset, []*ast.File{file}, info)
 	if err != nil {
 		t.Fatal(err)
@@ -50,7 +45,7 @@ func _() {
 			return true
 		}
 		if got := analysisutil.HasSideEffects(info, call); got != false {
-			t.Errorf("HasSideEffects(%s) = true, want false", types.ExprString(call))
+			t.Errorf("HasSideEffects(%s) = true, want false", typesutil.ExprString(call))
 		}
 		return true
 	})
